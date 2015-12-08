@@ -10,6 +10,8 @@ tic-tac-toe game in real time built with MEAN stack and socket.io
 * leaderboard.
 * list of user.
 * user profile.
+* mobile friendly.
+
 
 # Usage
 **Step 1** : Make sure you have Node.js and Mongodb Installed.(Just follow the guide over here [MongoDB](http://docs.mongodb.org/master/installation/) and here [Node.js](https://nodejs.org/en/download/)
@@ -20,7 +22,8 @@ tic-tac-toe game in real time built with MEAN stack and socket.io
 
 It is done now you can go to http://localhost:3000/ and check the app now. 
 
-
+# bugs
+* match making is still buggy(able to match 2 players, if 4 players only 2 allows to play another 2 players is on spectator mode). 
 
 
 # License 
