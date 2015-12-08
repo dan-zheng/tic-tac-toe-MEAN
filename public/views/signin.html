@@ -1,0 +1,32 @@
+<div flex>
+  <header class="content-image-container" layout-align="center center" style="background-image: url(https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=d23f7ecaedb63c82a12679b03e5b0058);" layout="column">
+    <h1 class="pure-splash-head white text-center">Good Luck, Have Fun.</h1>
+    <br/>
+    <div layout="column" layout-align="center center" layout-margin  layout-padding>
+      <div flex class="form-container">
+      <md-whiteframe class="shadow text-left">
+        <md-content md-theme="docs-dark" class="md-padding shadow" layout="column" layout-sm="column">
+            <form method="post" ng-submit="login()" name="loginForm">
+              <md-input-container flex>
+                <label>Username</label>
+                <input ng-model="userName" name="username" required>
+              </md-input-container>
+              <md-input-container flex>
+                <label>Password</label>
+                <input ng-model="password" name="password" type="password" required>
+              </md-input-container>
+              <div class="text-center">
+               <md-button type="submit" ng-disabled="loginForm.$invalid" class="md-raised md-accent btn" ><b>Sign In</b>
+               </md-button>
+               <md-checkbox ng-model="signedMeIn" aria-label="Keep me signed in" class="md-warn" ng-init="signedMeIn=true">
+              Keep me signed in
+            </md-checkbox>
+              <h3 class="text-center">Need an account? <a href="/signup" style="text-decoration:none;" class="green">Sign up now</a></h3>
+              </div>
+            </form>
+          </md-content>
+          </md-whiteframe>
+        </div>
+      </div>
+  </header>
+</div>

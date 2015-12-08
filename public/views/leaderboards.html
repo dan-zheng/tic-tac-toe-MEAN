@@ -1,0 +1,30 @@
+
+<md-content class="text-center" ng-if="isAuthenticated()" layout-align="center center" md-theme="docs-dark" class="md-padding" layout="column" layout-sm="column" >
+
+<div layout="column" layout-sm="column">
+  <div flex class=" card-size text-center" ng-repeat="user in usersData | orderBy:'-score.won'"  layout-margin layout-fill layout-padding>
+      <md-card>
+      <md-card-content>
+        <div layout="column">
+          <div flex><h2 class="pure-splash-head">{{user.user_name | uppercase}}</h2></div>
+          <br/><br/>
+          <h1 class="pure-splash-head">
+            <i ng-if="$index === 0" class="ion-trophy" style="font-size:128px; height:128px; color:#f1c40f"></i>
+            <i ng-if="$index === 1" class="ion-trophy" style="font-size:128px; height:128px; color:#bdc3c7"></i>
+            <i ng-if="$index === 2" class="ion-trophy" style="font-size:128px; height:128px; color:#d35400"></i>
+            <i ng-if="$index > 2" class="ion-ios-nutrition" style="font-size:128px; height:128px; color:#34495e"></i>
+            <br/> RANK #{{$index+1}}</h1>
+          <br/> <br/> <br/>
+          <div flex>
+            <div layout="row">
+              <div flex>Wins <br/> <span class="blue">{{user.score.won}}</span></div>
+              <div flex>Loses <br/> <span class="red">{{user.score.lost}}</span></div>
+              <div flex>Cats <br/> <span class="green">{{user.score.cat}}</span></div>
+            </div>
+          </div>
+       </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
+</md-content>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app='ttt'>
+<head>
+  <title ng-bind="title"></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="MobileOptimized" content="320">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.css">
+  <link rel="stylesheet" href='/static/stylesheets/clairvy.css'>
+  <link rel="stylesheet" href='/static/stylesheets/loading-bar.css'>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='/static/stylesheets/pure-typography.css'/>
+</head>
+<noscript>
+  <meta http-equiv="refresh" content="7">
+  <style type="text/css">
+    .pagecontainer {
+      display: none;
+    }
+  </style>
+  <div class=" text-center">
+    <title> Oh no ! We need Javascript to work !</title>
+    <h3>Hi Javascript "Disabler"</h3>
+    <p>Just want to let you know that this website will not work on Javascript disable browser.</p>
+    <p>However, this problem can be easily solve by enable your Javascript on your browser here's <a class="link" href="http://enable-javascript.com/" target="_blank">How</a></p>
+    <p>We are so sorry for the inconvenience that we caused, the reason is because the tools we use to build this website required Javascript enable environment to work.</p>
+    <h4>We really appreciate your effort to visit our site.</h4>
+    <h1>:'(</h1>
+  </div>
+</noscript>
+
+<body>
+  <div ng-controller="MasterCtrl" ng-cloak>
+    <body>
+        <div layout="column">
+            <md-toolbar md-scroll-shrink ng-if="!isAuthenticated()">
+              <div class="md-toolbar-tools sticky">
+                <md-button ng-click="toggleSideNavHome()" aria-label="Merchant">
+                  <b>What is Tic Tac Toe?</b>
+                </md-button>
+                <span flex></span>
+                <md-button ng-href="/" aria-label="Home">
+                  <b>Home</b>
+                </md-button>
+              </div>
+            </md-toolbar>
+    <md-toolbar class="tool-bar-color"ng-if="isAuthenticated()">
+     <div class="md-toolbar-tools sticky-logged-in ">
+       <span flex></span>
+       <md-button ng-href="/games "aria-label="analytics">
+         <md-tooltip>
+          <b>Let's Play</b>
+        </md-tooltip>
+         <md-icon style="font-size:24px; height:24px; color:#676767" md-font-icon="ion-ios-game-controller-b"></md-icon>
+       </md-button>
+       <md-button ng-href="/leaderboards "aria-label="crews">
+         <md-tooltip>
+          <b>Leaderboards</b>
+        </md-tooltip>
+         <md-icon style="font-size:24px; height:24px; color:#676767" md-font-icon="ion-ios-list"></md-icon>
+       </md-button>
+       <md-button ng-href="/" aria-label="Home">
+         <b class="black"><span class="blue">Tic</span> <span class="green">Tac</span> <span class="red">Toe!</span></b>
+         <md-tooltip>
+          <b>My Game</b>
+        </md-tooltip>
+       </md-button>
+       <md-button ng-href="/users" aria-label="faq">
+         <md-tooltip>
+          <b>Users</b>
+        </md-tooltip>
+         <md-icon style="font-size:24px; height:24px; color:#676767" md-font-icon="ion-ios-people"></md-icon>
+       </md-button>
+
+        <md-button ng-click="signOut()" aria-label="Sign Out">
+          <md-tooltip>
+           <b>Sign Out</b>
+         </md-tooltip>
+          <md-icon style="font-size:24px; height:24px; color:#676767" md-font-icon="ion-ios-circle-filled"></md-icon>
+        </md-button>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+        </div>
+        <md-sidenav class="md-sidenav-left " style="position:fixed;" md-component-id="left">
+          <md-toolbar style="background-color:white;">
+          </md-toolbar>
+          <md-content md-theme="docs-dark" ng-controller="SideNavHome" layout-padding class="slide">
+            <div layout="column" layout-sm="column" layout-align="center center" class="text-center" >
+              <span flex style="padding-top:10em;"></span>
+              <div flex>
+                <h2 class="pure-splash-subhead text-center">
+                  <span class="black"> A game in which two players seek in alternate turns to complete a row, a column, or a diagonal with <b>either</b> <br/>three <span class="red"><b>O</b></span>'s or three
+                  <span class="green"><b>X</b></span>'s drawn in the spaces of a grid of nine squares.</span>
+                  <br/><br/>
+                  <a href="https://www.youtube.com/watch?v=WUX0hB1u0vE" target="_blank" class="blue" ng-click="close()"><b>Here's a youtube video on how it works</b>.</a></h2>
+              </div>
+
+            </div>
+          </md-content>
+        </md-sidenav>
+        <md-content style="display:initial;">
+          <div style="padding-top:10vh;" ui-view autoscroll="true"></div>
+        </md-content>
+    </body>
+  </div>
+
+  <script type="text/javascript" src="/static/javascripts/lodash.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/satellizer/0.9.4/satellizer.min.js"></script>
+  <script type="text/javascript" src="/static/javascripts/loading-bar.js"></script>
+  <script type="text/javascript" src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+  <script type="text/javascript" src="/static/javascripts/app.js"></script>
+  <script type="text/javascript" src="/static/javascripts/controllers.js"></script>
+  <script type="text/javascript" src="/static/javascripts/directives.js"></script>
+  <script type="text/javascript" src="/static/javascripts/services.js"></script>
+
+</body>
+
+</html>
