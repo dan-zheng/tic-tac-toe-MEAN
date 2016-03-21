@@ -23,7 +23,7 @@ tic-tac-toe game in real time built with MEAN stack and socket.io
 It is done now you can go to http://localhost:3000/ and check the app now. 
 
 # Bugs
-* match making is still buggy(able to match 2 players, if 4 players only 2 allows to play another 2 players is on spectator mode). 
+* match making is still buggy(able to match 2 players, if 4 players only 2 players are allowed to play another 2 players are in spectator mode). 
 
 
 # License 
